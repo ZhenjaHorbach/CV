@@ -11,7 +11,7 @@ export const CONTACT_LINKS: ContactLink[] = [
   { key: "linkedin", href: "https://www.linkedin.com/in/yauheni-horbach-b53874171/", display: "linkedin.com/in/yauheni-horbach" },
   {
     key: "download",
-    href: "https://drive.google.com/uc?export=download&id=1AcyPOuEYE7H7S-A9yLmrauXy4BLNCyVk",
+    href: "https://drive.google.com/uc?export=download&id=1unySPQKnaF-ph1qhJdu5pDkRH4LgP3E3",
     display: "",
   },
 ];
