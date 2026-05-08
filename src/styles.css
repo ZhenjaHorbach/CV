@@ -115,39 +115,8 @@ section { position: relative; }
   --accent: oklch(0.58 0.17 50);
   --accent-deep: oklch(0.48 0.19 45);
 }
-[data-theme="light"] .preview { background: oklch(0.90 0.008 75); }
 [data-theme="light"] .terrain-stage { background: oklch(0.92 0.008 75); }
 [data-theme="light"] .terrain-tip { background: oklch(0.97 0.005 80 / .92); }
-[data-theme="light"] .ph {
-  background:
-    repeating-linear-gradient(135deg,
-      oklch(0.92 0.005 75) 0 8px,
-      oklch(0.86 0.005 75) 8px 16px);
-}
-[data-theme="light"] .ph.amber {
-  background:
-    repeating-linear-gradient(135deg,
-      oklch(0.92 0.06 65) 0 8px,
-      oklch(0.84 0.10 60) 8px 16px);
-}
-[data-theme="light"] .ph.green {
-  background:
-    repeating-linear-gradient(135deg,
-      oklch(0.92 0.05 150) 0 8px,
-      oklch(0.84 0.08 150) 8px 16px);
-}
-[data-theme="light"] .ph.blue {
-  background:
-    repeating-linear-gradient(135deg,
-      oklch(0.92 0.05 240) 0 8px,
-      oklch(0.84 0.08 240) 8px 16px);
-}
-[data-theme="light"] .ph.violet {
-  background:
-    repeating-linear-gradient(135deg,
-      oklch(0.92 0.06 310) 0 8px,
-      oklch(0.84 0.09 310) 8px 16px);
-}
 body, .chrome, .status, .terrain-stage { transition: background .35s ease, color .35s ease, border-color .35s ease; }
 
 /* Status bar */
@@ -303,6 +272,7 @@ body, .chrome, .status, .terrain-stage { transition: background .35s ease, color
 .work-row .title { font-family: var(--sans); font-weight: 500; font-size: clamp(26px, 3.2vw, 46px); line-height: 1; letter-spacing: -0.035em; transition: transform .5s cubic-bezier(.2,.8,.2,1); }
 .work-row:hover .title { transform: translateX(8px); }
 .work-row .title em { color: var(--accent); font-style: normal; font-weight: 400; }
+.work-row .title .scramble-active { color: var(--accent); }
 .work-row .role { font-family: var(--sans); font-size: 14px; color: var(--fg-dim); }
 .work-row .year { font-family: var(--mono); font-size: 12px; color: var(--fg-dim); text-align: right; }
 .work-row .arrow {
@@ -320,25 +290,6 @@ body, .chrome, .status, .terrain-stage { transition: background .35s ease, color
   .work-row { grid-template-columns: 40px 1fr 70px; gap: 12px; padding: 20px 4px; }
   .work-row .role, .work-row .arrow { display: none; }
 }
-
-/* Floating preview that follows cursor */
-.preview {
-  position: fixed; pointer-events: none; z-index: 40;
-  width: min(320px, 80vw); height: 220px; border-radius: 6px; overflow: hidden;
-  transform: translate(-50%, -50%) scale(.85); opacity: 0;
-  transition: opacity .35s ease, transform .35s cubic-bezier(.2,.8,.2,1);
-  will-change: transform;
-  border: 1px solid var(--rule);
-}
-.preview.show { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-.preview .pv {
-  position: absolute; inset: 0;
-  display: grid; place-items: center;
-  font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase;
-  color: var(--fg);
-  opacity: 0; transition: opacity .25s ease;
-}
-.preview .pv.active { opacity: 1; }
 
 /* ── Experience ───────────────────────────────── */
 .xp { padding-bottom: 60px; }
@@ -497,38 +448,6 @@ footer .right { text-align: right; }
 @media (max-width: 800px) {
   footer .wrap { grid-template-columns: 1fr; gap: 8px; }
   footer .right { text-align: left; }
-}
-
-/* placeholder pattern */
-.ph {
-  background:
-    repeating-linear-gradient(135deg,
-      oklch(0.22 0.01 65) 0 8px,
-      oklch(0.18 0.01 65) 8px 16px);
-}
-.ph.amber {
-  background:
-    repeating-linear-gradient(135deg,
-      oklch(0.32 0.10 60) 0 8px,
-      oklch(0.22 0.06 60) 8px 16px);
-}
-.ph.green {
-  background:
-    repeating-linear-gradient(135deg,
-      oklch(0.30 0.08 150) 0 8px,
-      oklch(0.20 0.04 150) 8px 16px);
-}
-.ph.blue {
-  background:
-    repeating-linear-gradient(135deg,
-      oklch(0.32 0.08 240) 0 8px,
-      oklch(0.20 0.04 240) 8px 16px);
-}
-.ph.violet {
-  background:
-    repeating-linear-gradient(135deg,
-      oklch(0.30 0.09 310) 0 8px,
-      oklch(0.20 0.05 310) 8px 16px);
 }
 
 /* button */
@@ -700,8 +619,6 @@ footer .right { text-align: right; }
 
   .contact { padding: 60px 0 100px; }
   .contact .big { font-size: clamp(36px, 12vw, 56px); }
-
-  .preview { width: min(220px, 80vw); height: 150px; }
 }
 
 /* ── Tiny (≤360px) ──────────────────────────── */

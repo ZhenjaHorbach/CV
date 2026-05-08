@@ -1,11 +1,9 @@
-import { useRef } from "react";
 import "./i18n";
 import { ThemeProvider } from "./theme/ThemeContext";
 import { Cursor } from "./components/Cursor";
 import { Chrome } from "./components/Chrome";
 import { Status } from "./components/Status";
 import { ScrollProgress } from "./components/ScrollProgress";
-import { Preview } from "./components/Preview";
 import { Hero } from "./components/Hero";
 import { Marquee } from "./components/Marquee";
 import { About } from "./components/About";
@@ -18,7 +16,6 @@ import { Footer } from "./components/Footer";
 import { useReveal } from "./hooks/useReveal";
 
 export default function App() {
-  const previewRef = useRef<HTMLDivElement>(null);
   useReveal();
 
   return (
@@ -27,13 +24,12 @@ export default function App() {
       <Chrome />
       <Status />
       <ScrollProgress />
-      <Preview ref={previewRef} />
 
       <main>
         <Hero />
         <Marquee />
         <About />
-        <Work previewRef={previewRef} />
+        <Work />
         <Experience />
         <Skills />
         <GitHubTerrain />

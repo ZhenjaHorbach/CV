@@ -1,4 +1,4 @@
-import { useEffect, type RefObject } from "react";
+import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { getCurrentYear } from "../i18n/dates";
 import { WORK_ITEMS } from "../data/work";
@@ -6,92 +6,83 @@ import { RawHtml } from "./RawHtml";
 
 const SCRAMBLE_CHARS = "!<>-_\\/[]{}—=+*^?#________";
 
+const ESCAPE_MAP: Record<string, string> = { "<": "&lt;", ">": "&gt;", "&": "&amp;" };
+const escapeHtml = (s: string) => s.replace(/[<>&]/g, (c) => ESCAPE_MAP[c]);
+
 function scramble(el: HTMLElement) {
-  const original = el.dataset.text || el.textContent || "";
-  el.dataset.text = original;
+  // If a previous scramble was running, cancel it and restore its HTML so we
+  // read a fresh, fully-coloured innerHTML below.
+  const prevRaf = (el as any)._f as number | undefined;
+  if (prevRaf) cancelAnimationFrame(prevRaf);
+  const prevHtml = (el as any)._origHtml as string | undefined;
+  if (prevHtml) el.innerHTML = prevHtml;
+
+  const original = el.textContent || "";
+  const originalHtml = el.innerHTML;
+  (el as any)._origHtml = originalHtml;
+
   let frame = 0;
   const queue: { from: string; to: string; start: number; end: number; char: string }[] = [];
   for (let i = 0; i < original.length; i++) {
-    const start = Math.floor(Math.random() * 12);
-    const end = start + Math.floor(Math.random() * 12);
+    const start = Math.floor(Math.random() * 22);
+    const end = start + Math.floor(Math.random() * 22);
     queue.push({ from: original[i], to: original[i], start, end, char: "" });
   }
-  const _f = (el as any)._f as number | undefined;
-  if (_f) cancelAnimationFrame(_f);
+
   const update = () => {
-    let out = "";
+    let html = "";
     let complete = 0;
     for (let i = 0; i < queue.length; i++) {
       const q = queue[i];
-      if (frame >= q.end) { complete++; out += q.to; }
-      else if (frame >= q.start) {
-        if (!q.char || Math.random() < 0.28) q.char = SCRAMBLE_CHARS[Math.floor(Math.random() * SCRAMBLE_CHARS.length)];
-        out += q.char;
+      if (frame >= q.end) {
+        complete++;
+        html += escapeHtml(q.to);
+      } else if (frame >= q.start) {
+        if (!q.char || Math.random() < 0.18) q.char = SCRAMBLE_CHARS[Math.floor(Math.random() * SCRAMBLE_CHARS.length)];
+        html += `<span class="scramble-active">${escapeHtml(q.char)}</span>`;
       } else {
-        out += q.from;
+        html += escapeHtml(q.from);
       }
     }
-    el.textContent = out;
     if (complete < queue.length) {
+      el.innerHTML = html;
       frame++;
       (el as any)._f = requestAnimationFrame(update);
+    } else {
+      el.innerHTML = originalHtml;
+      (el as any)._origHtml = undefined;
+      (el as any)._f = undefined;
     }
   };
   update();
 }
 
-interface Props {
-  previewRef: RefObject<HTMLDivElement>;
-}
-
-export function Work({ previewRef }: Props) {
+export function Work() {
   const { t } = useTranslation();
 
   useEffect(() => {
-    const preview = previewRef.current;
-    if (!preview) return;
-    const previews = preview.querySelectorAll<HTMLDivElement>(".pv");
-
-    let pvX = 0, pvY = 0, pvTX = 0, pvTY = 0;
-    let raf = 0;
-    const tick = () => {
-      pvX += (pvTX - pvX) * 0.16;
-      pvY += (pvTY - pvY) * 0.16;
-      preview.style.left = pvX + "px";
-      preview.style.top = pvY + "px";
-      raf = requestAnimationFrame(tick);
-    };
-    raf = requestAnimationFrame(tick);
-
-    type Handlers = { enter: () => void; leave: () => void; move: (e: MouseEvent) => void };
     const rows = document.querySelectorAll<HTMLAnchorElement>(".work-row");
-    const all: [HTMLAnchorElement, Handlers][] = [];
+    const handlers: [HTMLAnchorElement, () => void][] = [];
     rows.forEach((row) => {
-      const hasPreview = row.dataset.preview === "1";
-      const enter = () => {
+      const onEnter = () => {
         const titleEl = row.querySelector<HTMLElement>(".title");
         if (titleEl) scramble(titleEl);
-        if (!hasPreview) return;
-        preview.classList.add("show");
-        previews.forEach((p) => p.classList.toggle("active", p.dataset.key === row.dataset.key));
       };
-      const leave = () => preview.classList.remove("show");
-      const move = (e: MouseEvent) => { pvTX = e.clientX + 60; pvTY = e.clientY + 40; };
-      row.addEventListener("mouseenter", enter);
-      row.addEventListener("mouseleave", leave);
-      row.addEventListener("mousemove", move);
-      all.push([row, { enter, leave, move }]);
+      row.addEventListener("mouseenter", onEnter);
+      handlers.push([row, onEnter]);
     });
-
     return () => {
-      cancelAnimationFrame(raf);
-      all.forEach(([row, h]) => {
-        row.removeEventListener("mouseenter", h.enter);
-        row.removeEventListener("mouseleave", h.leave);
-        row.removeEventListener("mousemove", h.move);
+      handlers.forEach(([row, h]) => row.removeEventListener("mouseenter", h));
+      rows.forEach((row) => {
+        const titleEl = row.querySelector<HTMLElement>(".title");
+        if (!titleEl) return;
+        const raf = (titleEl as any)._f as number | undefined;
+        if (raf) cancelAnimationFrame(raf);
+        (titleEl as any)._f = undefined;
+        (titleEl as any)._origHtml = undefined;
       });
     };
-  }, [previewRef, t]);
+  }, [t]);
 
   const now = t("xp.now");
 
@@ -113,7 +104,6 @@ export function Work({ previewRef }: Props) {
               className={`work-row${external ? "" : " work-row-disabled"}`}
               data-key={item.key}
               data-cur="link"
-              data-preview={item.previewLabel ? "1" : "0"}
               {...(external ? { target: "_blank", rel: "noopener noreferrer" } : { onClick: (e) => e.preventDefault() })}
             >
               <span className="num">{item.num}</span>
