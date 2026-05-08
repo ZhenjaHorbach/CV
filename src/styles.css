@@ -340,8 +340,8 @@ body, .chrome, .status, .terrain-stage { transition: background .35s ease, color
   position: absolute; inset: 0; border: 1px solid var(--rule); border-radius: 50%;
 }
 .orbit .ring.r2 { inset: 12%; border-style: dashed; border-color: oklch(0.28 0.008 70 / .6); }
-.orbit .ring.r3 { inset: 28%; }
-.orbit .ring.r4 { inset: 36%; border-style: dashed; border-color: oklch(0.28 0.008 70 / .6); }
+.orbit .ring.r3 { inset: 22%; }
+.orbit .ring.r4 { inset: 30%; border-style: dashed; border-color: oklch(0.28 0.008 70 / .6); }
 .orbit .core {
   position: absolute; inset: 0; display: grid; place-items: center;
   font-family: var(--sans); font-weight: 400; font-size: clamp(24px, 2.4vw, 36px);
@@ -572,8 +572,12 @@ footer .right { text-align: right; }
   .skills { padding-bottom: 80px; }
   .skills-list { font-size: 17px; line-height: 1.6; }
   .skills-list .group { margin-bottom: 24px; }
-  .orbit { max-width: 280px; }
-  .orbit .chip { font-size: 9px; padding: 4px 8px; }
+  .orbit { max-width: 360px; }
+  .orbit .chip { font-size: 10px; padding: 5px 10px; }
+  .orbit .ring.r3,
+  .orbit .ring.r4,
+  .orbit .axis.a3,
+  .orbit .axis.a4 { display: none; }
 
   .github { padding-bottom: 60px; }
   .terrain-wrap { padding-top: 20px; gap: 20px; }

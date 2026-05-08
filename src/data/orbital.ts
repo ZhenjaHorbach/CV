@@ -35,7 +35,7 @@ export const ORBITAL_AXES: OrbitAxis[] = [
   },
   {
     className: "a3",
-    radius: 22,
+    radius: 28,
     startAngle: 0,
     chips: [
       { label: "GraphQL" },
@@ -46,7 +46,7 @@ export const ORBITAL_AXES: OrbitAxis[] = [
   },
   {
     className: "a4",
-    radius: 14,
+    radius: 20,
     startAngle: 90,
     chips: [
       { label: "Next.js" },

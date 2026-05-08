@@ -18,7 +18,7 @@
     "stat": {
       "yearsLabel": "Лет в RN",
       "prsLabel": "PR в open-source",
-      "fullStackLabel": "Лет end-to-end"
+      "fullStackLabel": "Лет full-stack"
     }
   },
   "about": {
@@ -27,12 +27,12 @@
     "coords": "N 52° 14′ · E 21° 02′",
     "p1": "<strong>Я делаю кроссплатформенные мобильные приложения, которые реально шипятся.</strong> iOS, Android и Web из одной React Native кодовой базы — с такой проработкой производительности и анимаций, которая отличает порт от настоящего нативного опыта.",
     "p2": "Пять лет в EPAM, рост от Junior до Senior, владение критическими фичами для крупных европейских банков и e-commerce. Два года в <strong>New Expensify</strong> — одной из крупнейших open-source RN / RN Web кодовых баз — повышение до <span class=\"hl\">Contributor+</span> после 100+ merged PR.",
-    "p3": "Сейчас: <span class=\"hl\">LLM-фичи внутри мобильных продуктов.</span> Prompt design, evals, управление контекстом, agentic flows и MCP — встроенные в Expo-приложения с Supabase за ними."
+    "p3": "Сейчас: <span class=\"hl\">LLM-фичи внутри мобильных продуктов.</span> Streaming, tool use, structured output, prompt caching и RAG — встроены в Expo-приложения с Supabase (Postgres + RLS) за ними."
   },
   "work": {
     "num": "02 / Избранное",
     "heading": "Избранные <em>работы</em>.",
-    "right": "2021 — {{year}} · 5 из 42",
+    "right": "2021 — {{year}}",
     "items": {
       "halo": {
         "title": "AI <em>пет-проекты</em>",
@@ -72,13 +72,13 @@
       "epam": {
         "when": "04 / 2021 — {{now}} · Гродно → Гданьск → Варшава",
         "where": "<em>EPAM</em> Systems",
-        "what": "Прошёл путь Junior → Middle → Senior React Native разработчик. Вёл production мобильные приложения для крупных европейских банков и e-commerce платформ; владел критическими фичами end-to-end и принимал технические решения по архитектуре и выбору библиотек.",
+        "what": "Прошёл путь Junior → Middle → Senior React Native разработчик; ключевой разработчик в командах от нескольких человек до 10. Вёл production мобильные приложения для крупных европейских банков и e-commerce. Провёл миграцию CI с Jenkins на GitHub Actions, внедрил integration и E2E тесты, владел архитектурными решениями и выбором библиотек end-to-end.",
         "tags": ["React Native", "TypeScript", "Redux / Zustand", "CI/CD"]
       },
       "expensify": {
         "when": "09 / 2023 — {{now}} · {{remote}}",
         "where": "New <em>Expensify</em>",
-        "what": "Долгосрочные open-source контрибуции в одну из крупнейших React Native / RN Web кодовых баз. 100+ merged PR на iOS, Android, Desktop и Web. Повышение до Contributor+ — теперь ревьюю предложения и PR других контрибьюторов и валидирую кроссплатформенное поведение.",
+        "what": "Долгосрочные open-source контрибуции в одну из крупнейших React Native / RN Web кодовых баз. 100+ merged PR на iOS, Android, Desktop и Web. Повышение до Contributor+ — ревью внешних proposals до того, как их подхватит инженер Expensify, и первое ревью соответствующих PR на всех четырёх платформах.",
         "tags": ["RN Web", "Cross-platform", "Code Review", "Contributor+"]
       },
       "ai": {
@@ -90,7 +90,7 @@
       "rs": {
         "when": "2021 — {{now}} · {{remote}}",
         "where": "RS School <em>ментор</em>",
-        "what": "Ментор в The Rolling Scopes School на нескольких потоках — веду начинающих фронтенд-разработчиков через курс и проекты. Провожу технические собеседования и помогаю с оценкой кандидатов.",
+        "what": "Ментор в The Rolling Scopes School на нескольких потоках — еженедельные встречи с группами по 2–6 студентов, ревью и оценка PR на фронтенд-треке с код-комментариями, плюс тренировочные интервью для подготовки к реальным собеседованиям.",
         "tags": ["Менторинг", "Интервью", "Front-end"]
       }
     }
@@ -102,23 +102,28 @@
     "groups": {
       "frontend": {
         "label": "Mobile & Frontend",
-        "primary": "React Native, React, TypeScript, JavaScript,",
-        "secondary": "Redux, Zustand, Reanimated, Gesture Handler, Expo, Next.js"
+        "primary": "React Native (New Architecture, Hermes), React, TypeScript, JavaScript,",
+        "secondary": "Expo + EAS, React Navigation, Reanimated, Gesture Handler, Redux, Zustand, TanStack Query"
       },
       "ai": {
         "label": "AI & LLM Integration",
-        "primary": "Anthropic Claude API, prompt engineering, evals,",
-        "secondary": "управление контекстом, agentic workflows, MCP"
+        "primary": "Anthropic Claude API, streaming, tool use, structured output,",
+        "secondary": "prompt caching, prompt engineering, evals, RAG, agentic workflows, MCP"
       },
       "backend": {
         "label": "Back-end & Infra",
-        "primary": "Node.js, Express.js, GraphQL, REST, Supabase,",
-        "secondary": "MongoDB, Google Places API, Mapbox"
+        "primary": "Node.js, Nest.js, PostgreSQL, Supabase (RLS, Edge Functions), GraphQL,",
+        "secondary": "REST, Docker, Express.js, MongoDB, Mapbox, Google Places API"
       },
       "tooling": {
         "label": "Tooling & Quality",
-        "primary": "Git, GitHub Actions, Jenkins, Jest,",
-        "secondary": "Jira, code review, менторинг"
+        "primary": "Git, GitHub Actions, Maestro, Jest,",
+        "secondary": "Storybook, Sentry, ESLint / Prettier, Jira"
+      },
+      "lead": {
+        "label": "Лидерство & Процесс",
+        "primary": "Код-ревью, менторинг, hiring loops,",
+        "secondary": "RFC / техспеки, кросс-командная работа"
       }
     },
     "core": "Mobile"
@@ -165,7 +170,7 @@
   },
   "footer": {
     "copyright": "© {{year}} · Yauheni Horbach",
-    "center": "Senior React Native · Варшава, PL",
+    "center": "Senior React Native · LLM in mobile · Варшава, PL",
     "updated": "Обновлено {{month}}.{{year}}"
   }
 }

@@ -8,10 +8,10 @@ const BASE: MarqueeItem[] = [
   { label: "TypeScript", italic: true },
   { label: "Expo" },
   { label: "Reanimated", italic: true },
-  { label: "Claude API" },
-  { label: "MCP", italic: true },
-  { label: "Supabase" },
-  { label: "Mapbox", italic: true },
+  { label: "Maestro" },
+  { label: "Claude API", italic: true },
+  { label: "RAG" },
+  { label: "Supabase", italic: true },
 ];
 
 export const MARQUEE_ITEMS: MarqueeItem[] = BASE;
