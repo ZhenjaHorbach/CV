@@ -574,8 +574,14 @@ footer .right { text-align: right; }
   .skills-list .group { margin-bottom: 24px; }
   .orbit { max-width: 360px; }
   .orbit .chip { font-size: 10px; padding: 5px 10px; }
-  .orbit .axis,
-  .orbit .axis .chip { animation: none; }
+  .orbit .axis.a1,
+  .orbit .axis.a2,
+  .orbit .axis.a3,
+  .orbit .axis.a4,
+  .orbit .axis.a1 .chip,
+  .orbit .axis.a2 .chip,
+  .orbit .axis.a3 .chip,
+  .orbit .axis.a4 .chip { animation: none; }
 
   .github { padding-bottom: 60px; }
   .terrain-wrap { padding-top: 20px; gap: 20px; }
