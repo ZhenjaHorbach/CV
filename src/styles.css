@@ -96,9 +96,10 @@ section { position: relative; }
 .tog:hover { color: var(--fg); transform: translateY(-1px); }
 .tog.tog-icon { padding: 0; min-width: 24px; width: 24px; }
 .tog svg { width: 12px; height: 12px; display: block; }
-.tog .moon { display: none; }
-[data-theme="light"] .tog .sun { display: none; }
-[data-theme="light"] .tog .moon { display: block; }
+.tog .sun { display: none; }
+.tog .moon { display: block; }
+[data-theme="light"] .tog .sun { display: block; }
+[data-theme="light"] .tog .moon { display: none; }
 
 /* Light theme */
 [data-theme="light"] {
