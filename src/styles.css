@@ -594,6 +594,8 @@ footer .right { text-align: right; }
   font-family: var(--mono); font-size: 10px; letter-spacing: .06em; text-transform: uppercase; color: var(--fg-dim);
 }
 .terrain-legend i { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+.terrain-legend-empty { background: #3a342a; }
+[data-theme="light"] .terrain-legend-empty { background: #c9bfa9; }
 @media (max-width: 900px) {
   .terrain-wrap { grid-template-columns: 1fr; }
   .terrain-stage { min-height: 320px; }

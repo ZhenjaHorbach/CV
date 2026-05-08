@@ -502,7 +502,7 @@ export function GitHubTerrain() {
           </div>
           <div className="terrain-legend">
             <span>{t("github.less")}</span>
-            <i style={{ background: "oklch(0.28 0.02 70)" }} />
+            <i className="terrain-legend-empty" />
             <i style={{ background: "oklch(0.62 0.10 65)" }} />
             <i style={{ background: "oklch(0.74 0.15 65)" }} />
             <i style={{ background: "oklch(0.85 0.18 70)" }} />
