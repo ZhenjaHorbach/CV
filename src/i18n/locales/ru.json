@@ -1,0 +1,170 @@
+{
+  "lang": { "code": "RU" },
+  "nav": {
+    "work": "Работа",
+    "experience": "Опыт",
+    "github": "GitHub",
+    "stack": "Стек",
+    "contact": "Контакты"
+  },
+  "clock": { "city": "Варшава" },
+  "status": "Открыт к работе · {{month}} {{year}} · Варшава / Remote",
+  "hero": {
+    "cv": "Резюме · 2021 — {{year}}",
+    "location": "[ Варшава, PL · Открыт к работе ]",
+    "h1": "<span class=\"word\"><span class=\"blk\">React</span></span> <span class=\"word\"><span class=\"it\">Native</span></span><br /><span class=\"word\"><span class=\"blk\">в продакшене,&nbsp;</span></span> <span class=\"word\"><span class=\"it\">с</span></span><br /><span class=\"word\"><span class=\"blk\">AI</span></span> <span class=\"word\"><span class=\"it\">внутри</span><span class=\"blk\">.</span></span>",
+    "lede": "Я <em>Yauheni Horbach</em> — Senior React Native разработчик с 5 годами опыта в кроссплатформенных приложениях для европейских банков и e-commerce, плюс 100+ merged PR в Expensify. Сейчас: интегрирую LLM-фичи в мобильные продукты, end-to-end.",
+    "stat": {
+      "yearsLabel": "Лет в RN",
+      "prsLabel": "PR в open-source",
+      "fullStackLabel": "Лет end-to-end"
+    }
+  },
+  "about": {
+    "num": "01 / О себе",
+    "heading": "Короткий <em>манифест</em>.",
+    "coords": "N 52° 14′ · E 21° 02′",
+    "p1": "<strong>Я делаю кроссплатформенные мобильные приложения, которые реально шипятся.</strong> iOS, Android и Web из одной React Native кодовой базы — с такой проработкой производительности и анимаций, которая отличает порт от настоящего нативного опыта.",
+    "p2": "Пять лет в EPAM, рост от Junior до Senior, владение критическими фичами для крупных европейских банков и e-commerce. Два года в <strong>New Expensify</strong> — одной из крупнейших open-source RN / RN Web кодовых баз — повышение до <span class=\"hl\">Contributor+</span> после 100+ merged PR.",
+    "p3": "Сейчас: <span class=\"hl\">LLM-фичи внутри мобильных продуктов.</span> Prompt design, evals, управление контекстом, agentic flows и MCP — встроенные в Expo-приложения с Supabase за ними."
+  },
+  "work": {
+    "num": "02 / Избранное",
+    "heading": "Избранные <em>работы</em>.",
+    "right": "2021 — {{year}} · 5 из 42",
+    "items": {
+      "halo": {
+        "title": "AI <em>пет-проекты</em>",
+        "role": "Соло · Expo + Claude API + Supabase",
+        "year": "2024 — {{now}}"
+      },
+      "lattice": {
+        "title": "<em>New</em> Expensify",
+        "role": "Open-source · Contributor+ · 100+ PR",
+        "year": "2023 — {{now}}"
+      },
+      "meridian": {
+        "title": "Банк <em>(Европа)</em>",
+        "role": "EPAM · Senior RN · iOS + Android финтех",
+        "year": "2023 — 2025"
+      },
+      "figment": {
+        "title": "<em>E-commerce</em> платформа",
+        "role": "EPAM · Mid → Senior · RN + GraphQL",
+        "year": "2022 — 2023"
+      },
+      "prism": {
+        "title": "RS <em>School</em> ментор",
+        "role": "Несколько потоков · фронтенд-курс",
+        "year": "2021 — {{now}}"
+      }
+    }
+  },
+  "xp": {
+    "num": "03 / Карьера",
+    "heading": "Где я <em>работал</em>.",
+    "right": "5 лет · 3 города",
+    "now": "сейчас",
+    "remote": "Remote",
+    "warsaw": "Варшава",
+    "cells": {
+      "epam": {
+        "when": "04 / 2021 — {{now}} · Гродно → Гданьск → Варшава",
+        "where": "<em>EPAM</em> Systems",
+        "what": "Прошёл путь Junior → Middle → Senior React Native разработчик. Вёл production мобильные приложения для крупных европейских банков и e-commerce платформ; владел критическими фичами end-to-end и принимал технические решения по архитектуре и выбору библиотек.",
+        "tags": ["React Native", "TypeScript", "Redux / Zustand", "CI/CD"]
+      },
+      "expensify": {
+        "when": "09 / 2023 — {{now}} · {{remote}}",
+        "where": "New <em>Expensify</em>",
+        "what": "Долгосрочные open-source контрибуции в одну из крупнейших React Native / RN Web кодовых баз. 100+ merged PR на iOS, Android, Desktop и Web. Повышение до Contributor+ — теперь ревьюю предложения и PR других контрибьюторов и валидирую кроссплатформенное поведение.",
+        "tags": ["RN Web", "Cross-platform", "Code Review", "Contributor+"]
+      },
+      "ai": {
+        "when": "2024 — {{now}} · {{warsaw}}",
+        "where": "AI <em>пет-проекты</em>",
+        "what": "Личные мобильные продукты вокруг Claude API от Anthropic — контекстные рекомендации, планирование маршрутов с оценкой времени, групповые сценарии принятия решений. End-to-end ownership: Expo, Supabase (Postgres, Auth, Edge Functions), Mapbox.",
+        "tags": ["Claude API", "Prompt Evals", "Supabase", "MCP"]
+      },
+      "rs": {
+        "when": "2021 — {{now}} · {{remote}}",
+        "where": "RS School <em>ментор</em>",
+        "what": "Ментор в The Rolling Scopes School на нескольких потоках — веду начинающих фронтенд-разработчиков через курс и проекты. Провожу технические собеседования и помогаю с оценкой кандидатов.",
+        "tags": ["Менторинг", "Интервью", "Front-end"]
+      }
+    }
+  },
+  "skills": {
+    "num": "04 / Стек",
+    "heading": "<em>Инструменты</em>, которые беру.",
+    "right": "Постоянно эволюционирует",
+    "groups": {
+      "frontend": {
+        "label": "Mobile & Frontend",
+        "primary": "React Native, React, TypeScript, JavaScript,",
+        "secondary": "Redux, Zustand, Reanimated, Gesture Handler, Expo, Next.js"
+      },
+      "ai": {
+        "label": "AI & LLM Integration",
+        "primary": "Anthropic Claude API, prompt engineering, evals,",
+        "secondary": "управление контекстом, agentic workflows, MCP"
+      },
+      "backend": {
+        "label": "Back-end & Infra",
+        "primary": "Node.js, Express.js, GraphQL, REST, Supabase,",
+        "secondary": "MongoDB, Google Places API, Mapbox"
+      },
+      "tooling": {
+        "label": "Tooling & Quality",
+        "primary": "Git, GitHub Actions, Jenkins, Jest,",
+        "secondary": "Jira, code review, менторинг"
+      }
+    },
+    "core": "Mobile"
+  },
+  "github": {
+    "num": "05 / GitHub",
+    "heading": "Рельеф, который я <em>оставляю</em>.",
+    "right": "Последние 12 месяцев",
+    "totalLabel": "Всего контрибуций",
+    "longestLabel": "Самый длинный стрик",
+    "currentLabel": "Текущий стрик",
+    "topLanguageLabel": "Главный язык",
+    "days": "дней",
+    "hintLabel": "Hover · drag · zoom",
+    "hintBody": "Тяни, чтобы вращать; скролли, чтобы зумить. Каждый пик — день, чем ярче, тем больше коммитов.",
+    "less": "меньше",
+    "more": "больше",
+    "tip_one": "<b>{{count}}</b> коммит · {{date}}",
+    "tip_few": "<b>{{count}}</b> коммита · {{date}}",
+    "tip_many": "<b>{{count}}</b> коммитов · {{date}}",
+    "tip_other": "<b>{{count}}</b> коммитов · {{date}}"
+  },
+  "contact": {
+    "num": "06 / Контакты",
+    "heading": "Давай <em>построим</em> что-то.",
+    "right": "Отвечаю в течение 24ч",
+    "big": "Есть <em>репо</em> <span class=\"at\">↗</span><br />которое нужно <em>зашипить</em>?",
+    "links": {
+      "email": "Email",
+      "phone": "Телефон",
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "downloadLabel": "Скачать CV (PDF)",
+      "downloadYear": "{{year}}"
+    },
+    "aside": {
+      "currentlyLabel": "Сейчас",
+      "currentlyBody": "Открыт к Senior / Lead React Native ролям — и к командам, которые серьёзно шипят LLM-фичи в production mobile.",
+      "basedInLabel": "Локация",
+      "basedInBody": "Варшава, Польша — полностью remote-friendly, комфортно во всех европейских таймзонах. Готов летать на kickoffs и on-site.",
+      "languagesLabel": "Языки",
+      "languagesBody": "Беларуский (родной), русский (родной), английский B2 — Upper-Intermediate, польский B1 — Intermediate."
+    }
+  },
+  "footer": {
+    "copyright": "© {{year}} · Yauheni Horbach",
+    "center": "Senior React Native · Варшава, PL",
+    "updated": "Обновлено {{month}}.{{year}}"
+  }
+}

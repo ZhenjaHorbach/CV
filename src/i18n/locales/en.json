@@ -1,0 +1,168 @@
+{
+  "lang": { "code": "EN" },
+  "nav": {
+    "work": "Work",
+    "experience": "Experience",
+    "github": "GitHub",
+    "stack": "Stack",
+    "contact": "Contact"
+  },
+  "clock": { "city": "Warsaw" },
+  "status": "Open to work · {{month}} {{year}} · Warsaw / Remote",
+  "hero": {
+    "cv": "Curriculum Vitae · 2021 — {{year}}",
+    "location": "[ Warsaw, PL · Open to work ]",
+    "h1": "<span class=\"word\"><span class=\"blk\">React</span></span> <span class=\"word\"><span class=\"it\">Native</span></span><br /><span class=\"word\"><span class=\"blk\">at scale,&nbsp;</span></span> <span class=\"word\"><span class=\"it\">with</span></span><br /><span class=\"word\"><span class=\"blk\">AI</span></span> <span class=\"word\"><span class=\"it\">inside</span><span class=\"blk\">.</span></span>",
+    "lede": "I’m <em>Yauheni Horbach</em> — a Senior React Native developer with 5 years shipping cross-platform apps for European banks and e-commerce, plus 100+ merged PRs into Expensify. Lately: integrating LLM features into mobile products, end-to-end.",
+    "stat": {
+      "yearsLabel": "Years in RN",
+      "prsLabel": "Open-source PRs merged",
+      "fullStackLabel": "Years end-to-end"
+    }
+  },
+  "about": {
+    "num": "01 / About",
+    "heading": "A short <em>manifesto</em>.",
+    "coords": "N 52° 14′ · E 21° 02′",
+    "p1": "<strong>I build cross-platform mobile apps that ship.</strong> iOS, Android and Web from a single React Native codebase, with the kind of performance and animation work that separates a port from a real native experience.",
+    "p2": "Five years at EPAM growing from Junior to Senior, owning critical features for major European banks and e-commerce. Two years contributing to <strong>New Expensify</strong> — one of the largest open-source RN / RN Web codebases — promoted to <span class=\"hl\">Contributor+</span> after 100+ merged PRs.",
+    "p3": "Lately: <span class=\"hl\">LLM features inside mobile products.</span> Prompt design, evals, context-window management, agentic flows, and MCP — wired into Expo apps with Supabase behind them."
+  },
+  "work": {
+    "num": "02 / Selected",
+    "heading": "Selected <em>work</em>.",
+    "right": "2021 — {{year}} · 5 of 42",
+    "items": {
+      "halo": {
+        "title": "AI <em>Side Projects</em>",
+        "role": "Solo · Expo + Claude API + Supabase",
+        "year": "2024 — {{now}}"
+      },
+      "lattice": {
+        "title": "<em>New</em> Expensify",
+        "role": "Open-source · Contributor+ · 100+ PRs",
+        "year": "2023 — {{now}}"
+      },
+      "meridian": {
+        "title": "European <em>Bank App</em>",
+        "role": "EPAM · Senior RN · iOS + Android fintech",
+        "year": "2023 — 2025"
+      },
+      "figment": {
+        "title": "<em>E-commerce</em> Platform",
+        "role": "EPAM · Mid → Senior · RN + GraphQL",
+        "year": "2022 — 2023"
+      },
+      "prism": {
+        "title": "RS <em>School</em> Mentor",
+        "role": "Multiple cohorts · front-end coursework",
+        "year": "2021 — {{now}}"
+      }
+    }
+  },
+  "xp": {
+    "num": "03 / Career",
+    "heading": "Where I’ve <em>been</em>.",
+    "right": "5 years · 3 cities",
+    "now": "Now",
+    "remote": "Remote",
+    "warsaw": "Warsaw",
+    "cells": {
+      "epam": {
+        "when": "04 / 2021 — {{now}} · Grodno → Gdańsk → Warsaw",
+        "where": "<em>EPAM</em> Systems",
+        "what": "Progressed Junior → Middle → Senior React Native developer. Delivered production mobile apps for major European banks and e-commerce platforms; owned critical features end-to-end and drove technical decisions on architecture and library choices.",
+        "tags": ["React Native", "TypeScript", "Redux / Zustand", "CI/CD"]
+      },
+      "expensify": {
+        "when": "09 / 2023 — {{now}} · {{remote}}",
+        "where": "New <em>Expensify</em>",
+        "what": "Long-running open-source contributions to one of the largest React Native / RN Web codebases. 100+ merged PRs across iOS, Android, Desktop, Web. Promoted to Contributor+ — now reviewing other contributors’ proposals and validating cross-platform behaviour.",
+        "tags": ["RN Web", "Cross-platform", "Code Review", "Contributor+"]
+      },
+      "ai": {
+        "when": "2024 — {{now}} · {{warsaw}}",
+        "where": "AI <em>Side Projects</em>",
+        "what": "Building personal mobile products around Anthropic’s Claude API — contextual recommendations, route planning with time estimation, group decision flows. End-to-end ownership: Expo, Supabase (Postgres, Auth, Edge Functions), Mapbox.",
+        "tags": ["Claude API", "Prompt Evals", "Supabase", "MCP"]
+      },
+      "rs": {
+        "when": "2021 — {{now}} · {{remote}}",
+        "where": "RS School <em>Mentor</em>",
+        "what": "Mentor at The Rolling Scopes School across multiple cohorts — guiding aspiring front-end developers through coursework and projects. Conducted technical assessments and interviews, helped run candidate evaluations.",
+        "tags": ["Mentoring", "Interviews", "Front-end"]
+      }
+    }
+  },
+  "skills": {
+    "num": "04 / Stack",
+    "heading": "The <em>tools</em> I reach for.",
+    "right": "Constantly evolving",
+    "groups": {
+      "frontend": {
+        "label": "Mobile & Frontend",
+        "primary": "React Native, React, TypeScript, JavaScript,",
+        "secondary": "Redux, Zustand, Reanimated, Gesture Handler, Expo, Next.js"
+      },
+      "ai": {
+        "label": "AI & LLM Integration",
+        "primary": "Anthropic Claude API, prompt engineering, evals,",
+        "secondary": "context management, agentic workflows, MCP"
+      },
+      "backend": {
+        "label": "Back-end & Infra",
+        "primary": "Node.js, Express.js, GraphQL, REST, Supabase,",
+        "secondary": "MongoDB, Google Places API, Mapbox"
+      },
+      "tooling": {
+        "label": "Tooling & Quality",
+        "primary": "Git, GitHub Actions, Jenkins, Jest,",
+        "secondary": "Jira, code review, mentoring"
+      }
+    },
+    "core": "Mobile"
+  },
+  "github": {
+    "num": "05 / GitHub",
+    "heading": "The <em>terrain</em> I leave behind.",
+    "right": "Last 12 months",
+    "totalLabel": "Total contributions",
+    "longestLabel": "Longest streak",
+    "currentLabel": "Current streak",
+    "topLanguageLabel": "Top language",
+    "days": "days",
+    "hintLabel": "Hover · drag · zoom",
+    "hintBody": "Drag to rotate, wheel/pinch to zoom. Each peak is a day; brighter ones are heavier commit days.",
+    "less": "less",
+    "more": "more",
+    "tip_one": "<b>{{count}}</b> contribution · {{date}}",
+    "tip_other": "<b>{{count}}</b> contributions · {{date}}"
+  },
+  "contact": {
+    "num": "06 / Contact",
+    "heading": "Let’s <em>build</em> something.",
+    "right": "Replies in < 24h",
+    "big": "Got a <em>repo</em> <span class=\"at\">↗</span><br />that needs <em>shipping</em>?",
+    "links": {
+      "email": "Email",
+      "phone": "Phone",
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "downloadLabel": "Download CV (PDF)",
+      "downloadYear": "{{year}}"
+    },
+    "aside": {
+      "currentlyLabel": "Currently",
+      "currentlyBody": "Open to Senior / Lead React Native roles — and to teams shipping serious LLM features into production mobile.",
+      "basedInLabel": "Based in",
+      "basedInBody": "Warsaw, Poland — fully remote-friendly, comfortable across European timezones. Happy to travel for kickoffs and on-sites.",
+      "languagesLabel": "Languages",
+      "languagesBody": "Belarusian (native), Russian (native), English B2 — Upper-Intermediate, Polish B1 — Intermediate."
+    }
+  },
+  "footer": {
+    "copyright": "© {{year}} · Yauheni Horbach",
+    "center": "Senior React Native · Warsaw, PL",
+    "updated": "Updated {{month}}.{{year}}"
+  }
+}
