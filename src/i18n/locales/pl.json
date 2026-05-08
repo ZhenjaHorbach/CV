@@ -1,6 +1,7 @@
 {
   "lang": { "code": "PL" },
   "nav": {
+    "about": "O mnie",
     "work": "Praca",
     "experience": "Doświadczenie",
     "github": "GitHub",

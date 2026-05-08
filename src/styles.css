@@ -62,10 +62,13 @@ section { position: relative; }
 .chrome {
   position: fixed; inset: 0 0 auto 0; z-index: 50;
   display: flex; justify-content: space-between; align-items: center;
-  padding: 22px clamp(20px, 3.5vw, 44px);
+  padding: 18px clamp(20px, 3.5vw, 44px);
   font-family: var(--mono); font-size: 11px; letter-spacing: .04em;
   text-transform: uppercase; color: var(--fg-dim);
-  mix-blend-mode: difference;
+  background: color-mix(in oklch, var(--bg), transparent 50%);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-bottom: 1px solid color-mix(in oklch, var(--rule), transparent 60%);
 }
 .chrome .brand { color: var(--fg); display: flex; align-items: center; gap: 10px; }
 .chrome .brand .glyph {
@@ -485,7 +488,7 @@ body, .chrome, .status, .terrain-stage { transition: background .35s ease, color
 /* footer */
 footer {
   border-top: 1px solid var(--rule);
-  padding: 32px 0; font-family: var(--mono); font-size: 11px; color: var(--fg-faint);
+  padding: 32px 0 60px; font-family: var(--mono); font-size: 11px; color: var(--fg-faint);
   text-transform: uppercase; letter-spacing: .06em;
 }
 footer .wrap { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
@@ -669,7 +672,7 @@ footer .right { text-align: right; }
   .contact .link .h { font-size: 10px; flex-shrink: 0; }
   .contact .aside .biggie { font-size: 17px; }
 
-  footer { padding: 22px 0; }
+  footer { padding: 22px 0 40px; }
 }
 
 /* ── Very small (≤480px) ────────────────────── */
