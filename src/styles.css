@@ -348,12 +348,15 @@ body, .chrome, .status, .terrain-stage { transition: background .35s ease, color
   letter-spacing: -0.02em;
   color: var(--accent);
 }
-.orbit .axis { position: absolute; inset: 0; transform-origin: center; }
+.orbit .axis { position: absolute; inset: 0; transform-origin: center; transform: rotate(0); will-change: transform; }
 .orbit .axis.a1 { animation: spin 36s linear infinite; }
 .orbit .axis.a2 { animation: spin 28s linear infinite reverse; }
 .orbit .axis.a3 { animation: spin 22s linear infinite; }
 .orbit .axis.a4 { animation: spin 16s linear infinite reverse; }
-@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
 .orbit .chip {
   position: absolute; transform: translate(-50%, -50%);
   font-family: var(--mono); font-size: 11px; letter-spacing: .04em; text-transform: uppercase;
@@ -367,7 +370,10 @@ body, .chrome, .status, .terrain-stage { transition: background .35s ease, color
 .orbit .axis.a2 .chip { animation: counter-spin 28s linear infinite reverse; }
 .orbit .axis.a3 .chip { animation: counter-spin 22s linear infinite; }
 .orbit .axis.a4 .chip { animation: counter-spin 16s linear infinite reverse; }
-@keyframes counter-spin { to { transform: translate(-50%, -50%) rotate(-360deg); } }
+@keyframes counter-spin {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(-360deg); }
+}
 
 @media (max-width: 800px) {
   .skills-wrap { grid-template-columns: 1fr; }

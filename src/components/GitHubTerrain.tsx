@@ -278,7 +278,7 @@ export function GitHubTerrain() {
       viewportZoom = Math.max(1, 2.0 / Math.max(0.6, camera.aspect));
     };
     const camBase = new THREE.Vector3(0, 9, 14);
-    let zoom = 1, zoomTarget = 1;
+    let zoom = 1.4, zoomTarget = 1.4;
     const applyCam = () => camera.position.copy(camBase).multiplyScalar(zoom * viewportZoom);
     fitCamera();
     applyCam();
@@ -337,7 +337,7 @@ export function GitHubTerrain() {
     const onWheel = (e: WheelEvent) => {
       e.preventDefault();
       const delta = e.deltaY * 0.0015;
-      zoomTarget = Math.max(0.45, Math.min(2.2, zoomTarget * (1 + delta)));
+      zoomTarget = Math.max(0.45, Math.min(4.0, zoomTarget * (1 + delta)));
     };
 
     const raycaster = new THREE.Raycaster();
@@ -392,7 +392,7 @@ export function GitHubTerrain() {
       if (pointers.size === 2 && pinchStart > 0) {
         const p = [...pointers.values()];
         const d = Math.hypot(p[0].x - p[1].x, p[0].y - p[1].y);
-        zoomTarget = Math.max(0.45, Math.min(2.2, pinchZoom * (pinchStart / d)));
+        zoomTarget = Math.max(0.45, Math.min(4.0, pinchZoom * (pinchStart / d)));
       }
       if (dragging) {
         ry += (e.clientX - lx) * 0.008;
@@ -416,26 +416,37 @@ export function GitHubTerrain() {
     canvas.addEventListener("pointermove", onPointerMove);
     canvas.addEventListener("pointerleave", onPointerLeave);
 
+    let isVisible = false;
+    const visIO = new IntersectionObserver(
+      (entries) => {
+        isVisible = entries[0].isIntersecting;
+      },
+      { threshold: 0.05 }
+    );
+    visIO.observe(canvas);
+
     const t0 = performance.now();
     const loop = (now: number) => {
-      const tt = (now - t0) / 1000;
-      cells.forEach((c) => {
-        const u = c.userData as { w: number; d: number; targetH: number; hover: boolean };
-        const delay = u.w * 0.018 + u.d * 0.04;
-        const k = Math.max(0, Math.min(1, (tt - delay) / 0.9));
-        const eased = 1 - Math.pow(1 - k, 3);
-        const targetScale = eased * u.targetH + 0.001;
-        const hoverBoost = u.hover ? 1.25 : 1.0;
-        c.scale.y += (targetScale * hoverBoost - c.scale.y) * 0.18;
-        c.position.y = c.scale.y / 2;
-      });
-      if (autoRot) ry += 0.0024;
-      root.rotation.y += (ry - root.rotation.y) * 0.1;
-      root.rotation.x += (rx - root.rotation.x) * 0.1;
-      zoom += (zoomTarget - zoom) * 0.12;
-      applyCam();
-      camera.lookAt(0, 0, 0);
-      renderer.render(scene, camera);
+      if (isVisible) {
+        const tt = (now - t0) / 1000;
+        cells.forEach((c) => {
+          const u = c.userData as { w: number; d: number; targetH: number; hover: boolean };
+          const delay = u.w * 0.018 + u.d * 0.04;
+          const k = Math.max(0, Math.min(1, (tt - delay) / 0.9));
+          const eased = 1 - Math.pow(1 - k, 3);
+          const targetScale = eased * u.targetH + 0.001;
+          const hoverBoost = u.hover ? 1.25 : 1.0;
+          c.scale.y += (targetScale * hoverBoost - c.scale.y) * 0.18;
+          c.position.y = c.scale.y / 2;
+        });
+        if (autoRot) ry += 0.0014;
+        root.rotation.y += (ry - root.rotation.y) * 0.1;
+        root.rotation.x += (rx - root.rotation.x) * 0.1;
+        zoom += (zoomTarget - zoom) * 0.12;
+        applyCam();
+        camera.lookAt(0, 0, 0);
+        renderer.render(scene, camera);
+      }
       raf = requestAnimationFrame(loop);
     };
     raf = requestAnimationFrame(loop);
@@ -450,6 +461,7 @@ export function GitHubTerrain() {
       canvas.removeEventListener("wheel", onWheel);
       canvas.removeEventListener("pointermove", onPointerMove);
       canvas.removeEventListener("pointerleave", onPointerLeave);
+      visIO.disconnect();
       statsIO?.disconnect();
       cells.forEach((c) => (c.material as THREE.Material).dispose());
       baseGeo.dispose();
