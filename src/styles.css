@@ -115,7 +115,6 @@ section { position: relative; }
   --accent: oklch(0.58 0.17 50);
   --accent-deep: oklch(0.48 0.19 45);
 }
-[data-theme="light"] .status { background: oklch(0.97 0.005 80 / .82); }
 [data-theme="light"] .preview { background: oklch(0.90 0.008 75); }
 [data-theme="light"] .terrain-stage { background: oklch(0.92 0.008 75); }
 [data-theme="light"] .terrain-tip { background: oklch(0.97 0.005 80 / .92); }
@@ -157,8 +156,10 @@ body, .chrome, .status, .terrain-stage { transition: background .35s ease, color
   display: flex; align-items: center; gap: 10px;
   font-family: var(--mono); font-size: 11px; letter-spacing: .04em;
   text-transform: uppercase; color: var(--fg-dim);
-  padding: 8px 12px; border: 1px solid var(--rule); border-radius: 999px;
-  background: oklch(0.16 0.008 60 / .7); backdrop-filter: blur(8px);
+  padding: 8px 12px; border: 1px solid color-mix(in oklch, var(--rule), transparent 60%); border-radius: 999px;
+  background: color-mix(in oklch, var(--bg), transparent 50%);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
 }
 .status .dot {
   width: 7px; height: 7px; border-radius: 50%; background: oklch(0.78 0.18 145);
