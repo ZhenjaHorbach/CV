@@ -117,6 +117,12 @@ section { position: relative; }
 }
 [data-theme="light"] .terrain-stage { background: oklch(0.92 0.008 75); }
 [data-theme="light"] .terrain-tip { background: oklch(0.97 0.005 80 / .92); }
+[data-theme="light"] .cursor-ring {
+  mix-blend-mode: normal;
+  border-color: oklch(0.20 0.012 70 / .5);
+}
+[data-theme="light"] body.cur-link .cursor-ring { border-color: var(--accent); }
+[data-theme="light"] body.cur-text .cursor-ring { background: var(--fg); }
 body, .chrome, .status, .terrain-stage { transition: background .35s ease, color .35s ease, border-color .35s ease; }
 
 /* Status bar */
