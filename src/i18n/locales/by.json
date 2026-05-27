@@ -37,7 +37,20 @@
       "halo": {
         "title": "AI <em>пэт-праекты</em>",
         "role": "Сола · Expo + Claude API + Supabase",
-        "year": "2024 — {{now}}"
+        "year": "2025 — {{now}}",
+        "modal": {
+          "eyebrow": "N° 01 · Сола-эксперыменты",
+          "title": "AI <em>пэт-праекты</em>",
+          "subtitle": "Асабістыя мабільныя і web-прадукты вакол Claude API ад Anthropic, з Expo, Supabase і Mapbox пад капотам.",
+          "close": "Закрыць",
+          "back": "Назад",
+          "projects": {
+            "collecta": {
+              "name": "<em>Collecta</em>",
+              "desc": "Асабісты AI пэт-праект — адкрый live-дэма."
+            }
+          }
+        }
       },
       "lattice": {
         "title": "<em>New</em> Expensify",
@@ -82,7 +95,7 @@
         "tags": ["RN Web", "Cross-platform", "Code Review", "Contributor+"]
       },
       "ai": {
-        "when": "2024 — {{now}} · {{warsaw}}",
+        "when": "2025 — {{now}} · {{warsaw}}",
         "where": "AI <em>пэт-праекты</em>",
         "what": "Асабістыя мабільныя прадукты вакол Claude API ад Anthropic — кантэкстныя рэкамендацыі, планаванне маршрутаў з ацэнкай часу, групавыя сцэнары прыняцця рашэнняў. End-to-end ownership: Expo, Supabase (Postgres, Auth, Edge Functions), Mapbox.",
         "tags": ["Claude API", "Prompt Evals", "Supabase", "MCP"]

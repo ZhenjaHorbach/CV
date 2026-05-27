@@ -37,7 +37,20 @@
       "halo": {
         "title": "AI <em>Side Projects</em>",
         "role": "Solo · Expo + Claude API + Supabase",
-        "year": "2024 — {{now}}"
+        "year": "2025 — {{now}}",
+        "modal": {
+          "eyebrow": "N° 01 · Solo experiments",
+          "title": "AI <em>Side Projects</em>",
+          "subtitle": "Personal mobile and web products built around Anthropic's Claude API, with Expo, Supabase and Mapbox underneath.",
+          "close": "Close",
+          "back": "Back",
+          "projects": {
+            "collecta": {
+              "name": "<em>Collecta</em>",
+              "desc": "A personal AI side project — explore the live demo."
+            }
+          }
+        }
       },
       "lattice": {
         "title": "<em>New</em> Expensify",
@@ -82,7 +95,7 @@
         "tags": ["RN Web", "Cross-platform", "Code Review", "Contributor+"]
       },
       "ai": {
-        "when": "2024 — {{now}} · {{warsaw}}",
+        "when": "2025 — {{now}} · {{warsaw}}",
         "where": "AI <em>Side Projects</em>",
         "what": "Building personal mobile products around Anthropic’s Claude API — contextual recommendations, route planning with time estimation, group decision flows. End-to-end ownership: Expo, Supabase (Postgres, Auth, Edge Functions), Mapbox.",
         "tags": ["Claude API", "Prompt Evals", "Supabase", "MCP"]

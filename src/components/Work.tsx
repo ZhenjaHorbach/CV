@@ -1,8 +1,9 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { getCurrentYear } from "../i18n/dates";
 import { WORK_ITEMS } from "../data/work";
 import { RawHtml } from "./RawHtml";
+import { WorkModal } from "./WorkModal";
 
 const SCRAMBLE_CHARS = "!<>-_\\/[]{}—=+*^?#________";
 
@@ -59,6 +60,7 @@ function scramble(el: HTMLElement) {
 
 export function Work() {
   const { t } = useTranslation();
+  const [modalOpen, setModalOpen] = useState(false);
 
   useEffect(() => {
     const rows = document.querySelectorAll<HTMLAnchorElement>(".work-row");
@@ -97,14 +99,25 @@ export function Work() {
       <div className="work-list">
         {WORK_ITEMS.map((item) => {
           const external = !!item.url;
+          const hasModal = !!item.modal;
+          const interactive = external || hasModal;
           return (
             <a
               key={item.key}
               href={item.url ?? "#"}
-              className={`work-row${external ? "" : " work-row-disabled"}`}
+              className={`work-row${interactive ? "" : " work-row-disabled"}`}
               data-key={item.key}
               data-cur="link"
-              {...(external ? { target: "_blank", rel: "noopener noreferrer" } : { onClick: (e) => e.preventDefault() })}
+              {...(external
+                ? { target: "_blank", rel: "noopener noreferrer" }
+                : hasModal
+                ? {
+                    onClick: (e) => {
+                      e.preventDefault();
+                      setModalOpen(true);
+                    },
+                  }
+                : { onClick: (e) => e.preventDefault() })}
             >
               <span className="num">{item.num}</span>
               <RawHtml className="title" html={t(`work.items.${item.key}.title`)} />
@@ -119,6 +132,8 @@ export function Work() {
           );
         })}
       </div>
+
+      <WorkModal open={modalOpen} onClose={() => setModalOpen(false)} />
     </section>
   );
 }

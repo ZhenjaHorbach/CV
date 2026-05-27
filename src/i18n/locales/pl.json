@@ -37,7 +37,20 @@
       "halo": {
         "title": "AI <em>pet projekty</em>",
         "role": "Solo · Expo + Claude API + Supabase",
-        "year": "2024 — {{now}}"
+        "year": "2025 — {{now}}",
+        "modal": {
+          "eyebrow": "N° 01 · Eksperymenty solo",
+          "title": "AI <em>pet projekty</em>",
+          "subtitle": "Osobiste produkty mobilne i webowe wokół Claude API od Anthropic, z Expo, Supabase i Mapbox pod spodem.",
+          "close": "Zamknij",
+          "back": "Wstecz",
+          "projects": {
+            "collecta": {
+              "name": "<em>Collecta</em>",
+              "desc": "Osobisty pet projekt AI — sprawdź live demo."
+            }
+          }
+        }
       },
       "lattice": {
         "title": "<em>New</em> Expensify",
@@ -82,7 +95,7 @@
         "tags": ["RN Web", "Cross-platform", "Code Review", "Contributor+"]
       },
       "ai": {
-        "when": "2024 — {{now}} · {{warsaw}}",
+        "when": "2025 — {{now}} · {{warsaw}}",
         "where": "AI <em>pet projekty</em>",
         "what": "Osobiste produkty mobilne wokół Claude API od Anthropic — kontekstowe rekomendacje, planowanie tras z szacowaniem czasu, grupowe scenariusze podejmowania decyzji. End-to-end ownership: Expo, Supabase (Postgres, Auth, Edge Functions), Mapbox.",
         "tags": ["Claude API", "Prompt Evals", "Supabase", "MCP"]
