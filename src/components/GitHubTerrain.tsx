@@ -12,8 +12,8 @@ const COLS = 53;
 const ROWS = 7;
 
 const THEME_COLORS = {
-  dark: { plate: 0x1a1812, empty: "#3a342a" },
-  light: { plate: 0xe9e2d4, empty: "#c9bfa9" },
+  dark: { plate: 0x141823, empty: "#2b3242" },
+  light: { plate: 0xd9e0eb, empty: "#aab6c9" },
 } as const;
 
 function generateSyntheticData(): number[][] {
@@ -166,9 +166,9 @@ export function GitHubTerrain() {
     const colorFor = (v: number, max: number) => {
       if (v === 0) return new THREE.Color(initialColors.empty);
       const x = v / max;
-      const c1 = new THREE.Color("#5a4524");
-      const c2 = new THREE.Color("#d68a3a");
-      const c3 = new THREE.Color("#ffc36b");
+      const c1 = new THREE.Color("#2b4a73");
+      const c2 = new THREE.Color("#4a8fd4");
+      const c3 = new THREE.Color("#8fd0ff");
       if (x < 0.5) return c1.clone().lerp(c2, x / 0.5);
       return c2.clone().lerp(c3, (x - 0.5) / 0.5);
     };
@@ -179,10 +179,10 @@ export function GitHubTerrain() {
     const camera = new THREE.PerspectiveCamera(38, 1, 0.1, 200);
 
     scene.add(new THREE.AmbientLight(0xffffff, 0.55));
-    const dir = new THREE.DirectionalLight(0xfff1d0, 1.1);
+    const dir = new THREE.DirectionalLight(0xdde8ff, 1.1);
     dir.position.set(8, 14, 6);
     scene.add(dir);
-    const rim = new THREE.DirectionalLight(0xff9d4d, 0.6);
+    const rim = new THREE.DirectionalLight(0x4d9aff, 0.6);
     rim.position.set(-6, 6, -4);
     scene.add(rim);
 
@@ -515,9 +515,9 @@ export function GitHubTerrain() {
           <div className="terrain-legend">
             <span>{t("github.less")}</span>
             <i className="terrain-legend-empty" />
-            <i style={{ background: "oklch(0.62 0.10 65)" }} />
-            <i style={{ background: "oklch(0.74 0.15 65)" }} />
-            <i style={{ background: "oklch(0.85 0.18 70)" }} />
+            <i style={{ background: "oklch(0.45 0.10 255)" }} />
+            <i style={{ background: "oklch(0.63 0.13 250)" }} />
+            <i style={{ background: "oklch(0.82 0.10 235)" }} />
             <span>{t("github.more")}</span>
           </div>
         </div>

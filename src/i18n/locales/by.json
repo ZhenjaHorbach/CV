@@ -13,7 +13,7 @@
   "hero": {
     "cv": "Рэзюмэ · 2021 — {{year}}",
     "location": "[ Варшава, PL · Адкрыты да працы ]",
-    "h1": "<span class=\"word\"><span class=\"blk\">React</span></span> <span class=\"word\"><span class=\"it\">Native</span></span><br /><span class=\"word\"><span class=\"blk\">у прадакшэне,&nbsp;</span></span> <span class=\"word\"><span class=\"it\">з</span></span><br /><span class=\"word\"><span class=\"blk\">AI</span></span> <span class=\"word\"><span class=\"it\">унутры</span><span class=\"blk\">.</span></span>",
+    "h1": "<span class=\"word\"><span class=\"blk\">React</span></span> <span class=\"word\"><span class=\"it\">Native</span></span> <span class=\"word\"><span class=\"blk\">у прадакшэне,</span></span> <span class=\"word\"><span class=\"it\">з</span></span> <span class=\"word\"><span class=\"blk\">AI</span></span> <span class=\"word\"><span class=\"it\">унутры</span><span class=\"blk\">.</span></span>",
     "lede": "Я <em>Yauheni Horbach</em> — Senior React Native распрацоўшчык з 5 гадамі вопыту ў крос-платформенных дадатках для еўрапейскіх банкаў і e-commerce, плюс 100+ merged PR у Expensify. Цяпер: інтэграцыя LLM-функцый у мабільныя прадукты, end-to-end.",
     "stat": {
       "yearsLabel": "Гадоў у RN",

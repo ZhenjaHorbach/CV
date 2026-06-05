@@ -13,7 +13,7 @@
   "hero": {
     "cv": "Curriculum Vitae · 2021 — {{year}}",
     "location": "[ Warszawa, PL · Otwarty na pracę ]",
-    "h1": "<span class=\"word\"><span class=\"blk\">React</span></span> <span class=\"word\"><span class=\"it\">Native</span></span><br /><span class=\"word\"><span class=\"blk\">w produkcji,&nbsp;</span></span> <span class=\"word\"><span class=\"it\">z</span></span><br /><span class=\"word\"><span class=\"blk\">AI</span></span> <span class=\"word\"><span class=\"it\">w środku</span><span class=\"blk\">.</span></span>",
+    "h1": "<span class=\"word\"><span class=\"blk\">React</span></span> <span class=\"word\"><span class=\"it\">Native</span></span> <span class=\"word\"><span class=\"blk\">w produkcji,</span></span> <span class=\"word\"><span class=\"it\">z</span></span> <span class=\"word\"><span class=\"blk\">AI</span></span> <span class=\"word\"><span class=\"it\">w środku</span><span class=\"blk\">.</span></span>",
     "lede": "Jestem <em>Yauheni Horbach</em> — Senior React Native developerem z 5-letnim doświadczeniem w aplikacjach cross-platform dla europejskich banków i e-commerce, plus 100+ merged PR w Expensify. Obecnie: integruję funkcje LLM w produkty mobilne, end-to-end.",
     "stat": {
       "yearsLabel": "Lat w RN",

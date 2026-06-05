@@ -1,12 +1,12 @@
 :root {
-  --bg: oklch(0.16 0.008 60);
-  --bg-2: oklch(0.19 0.009 60);
-  --fg: oklch(0.96 0.012 85);
-  --fg-dim: oklch(0.72 0.012 75);
-  --fg-faint: oklch(0.42 0.01 70);
-  --rule: oklch(0.28 0.008 70);
-  --accent: oklch(0.81 0.16 65);
-  --accent-deep: oklch(0.66 0.17 55);
+  --bg: oklch(0.19 0.014 250);
+  --bg-2: oklch(0.22 0.015 250);
+  --fg: oklch(0.92 0.008 240);
+  --fg-dim: oklch(0.69 0.014 245);
+  --fg-faint: oklch(0.46 0.014 245);
+  --rule: oklch(0.3 0.014 245);
+  --accent: oklch(0.75 0.11 235);
+  --accent-deep: oklch(0.62 0.13 245);
   --serif: "Space Grotesk", system-ui, sans-serif;
   --sans: "Space Grotesk", system-ui, sans-serif;
   --mono: "JetBrains Mono", ui-monospace, monospace;
@@ -41,7 +41,7 @@ a { color: inherit; text-decoration: none; }
 }
 .cursor-ring {
   width: 36px; height: 36px; border-radius: 50%;
-  border: 1px solid oklch(0.96 0.012 85 / .4);
+  border: 1px solid oklch(0.92 0.008 240 / .35);
   transition: width .3s cubic-bezier(.2,.8,.2,1), height .3s cubic-bezier(.2,.8,.2,1),
               border-color .25s ease, background .25s ease, backdrop-filter .25s ease;
   mix-blend-mode: difference;
@@ -106,20 +106,20 @@ section { position: relative; }
 
 /* Light theme */
 [data-theme="light"] {
-  --bg: oklch(0.97 0.005 80);
-  --bg-2: oklch(0.94 0.005 80);
-  --fg: oklch(0.18 0.012 70);
-  --fg-dim: oklch(0.42 0.012 70);
-  --fg-faint: oklch(0.62 0.008 75);
-  --rule: oklch(0.84 0.005 75);
-  --accent: oklch(0.58 0.17 50);
-  --accent-deep: oklch(0.48 0.19 45);
+  --bg: oklch(0.96 0.006 240);
+  --bg-2: oklch(0.93 0.008 240);
+  --fg: oklch(0.28 0.02 250);
+  --fg-dim: oklch(0.48 0.02 250);
+  --fg-faint: oklch(0.65 0.014 245);
+  --rule: oklch(0.86 0.01 240);
+  --accent: oklch(0.55 0.13 250);
+  --accent-deep: oklch(0.46 0.14 255);
 }
-[data-theme="light"] .terrain-stage { background: oklch(0.92 0.008 75); }
-[data-theme="light"] .terrain-tip { background: oklch(0.97 0.005 80 / .92); }
+[data-theme="light"] .terrain-stage { background: oklch(0.91 0.01 240); }
+[data-theme="light"] .terrain-tip { background: oklch(0.96 0.006 240 / .92); }
 [data-theme="light"] .cursor-ring {
   mix-blend-mode: normal;
-  border-color: oklch(0.20 0.012 70 / .5);
+  border-color: oklch(0.3 0.02 250 / .45);
 }
 [data-theme="light"] body.cur-link .cursor-ring { border-color: var(--accent); }
 [data-theme="light"] body.cur-text .cursor-ring { background: var(--fg); }
@@ -137,13 +137,13 @@ body, .chrome, .status, .terrain-stage { transition: background .35s ease, color
   -webkit-backdrop-filter: blur(5px);
 }
 .status .dot {
-  width: 7px; height: 7px; border-radius: 50%; background: oklch(0.78 0.18 145);
-  box-shadow: 0 0 0 0 oklch(0.78 0.18 145 / .6);
+  width: 7px; height: 7px; border-radius: 50%; background: oklch(0.76 0.12 145);
+  box-shadow: 0 0 0 0 oklch(0.76 0.12 145 / .5);
   animation: ring 2s ease-in-out infinite;
 }
 @keyframes ring {
-  0% { box-shadow: 0 0 0 0 oklch(0.78 0.18 145 / .6); }
-  100% { box-shadow: 0 0 0 12px oklch(0.78 0.18 145 / 0); }
+  0% { box-shadow: 0 0 0 0 oklch(0.76 0.12 145 / .5); }
+  100% { box-shadow: 0 0 0 12px oklch(0.76 0.12 145 / 0); }
 }
 .scroll-prog {
   position: fixed; right: clamp(20px, 3.5vw, 44px); bottom: 22px; z-index: 50;
@@ -192,9 +192,12 @@ body, .chrome, .status, .terrain-stage { transition: background .35s ease, color
   display: inline-block;
   background: linear-gradient(180deg, var(--fg) 0%, var(--fg-dim) 100%);
   -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  /* line-height .92 пускает выносные части глифов за границы бокса,
+     где background-clip: text их не закрашивает — расширяем область фона */
+  padding: .1em .05em .24em; margin: -.1em -.05em -.24em;
 }
-.hero h1 .word { display: inline-block; overflow: hidden; padding-bottom: .12em; vertical-align: top; }
-.hero h1 .word > span { display: inline-block; transform: translateY(110%); transition: transform 1.2s cubic-bezier(.2,.8,.2,1); }
+.hero h1 .word { display: inline-block; overflow: hidden; padding: .1em 0 .24em; margin: -.1em 0 -.24em; vertical-align: top; }
+.hero h1 .word > span { display: inline-block; transform: translateY(150%); transition: transform 1.2s cubic-bezier(.2,.8,.2,1); }
 .hero.in h1 .word > span { transform: none; }
 
 .hero .sub {
@@ -305,12 +308,12 @@ body, .chrome, .status, .terrain-stage { transition: background .35s ease, color
 .work-modal.is-open { pointer-events: auto; }
 .work-modal-backdrop {
   position: absolute; inset: 0;
-  background: oklch(0.10 0.008 60 / 0);
+  background: oklch(0.10 0.012 250 / 0);
   backdrop-filter: blur(0);
   transition: background .4s ease, backdrop-filter .4s ease;
 }
 .work-modal.is-open .work-modal-backdrop {
-  background: oklch(0.10 0.008 60 / .55);
+  background: oklch(0.10 0.012 250 / .55);
   backdrop-filter: blur(6px);
 }
 .work-modal-panel {
@@ -323,7 +326,7 @@ body, .chrome, .status, .terrain-stage { transition: background .35s ease, color
   overflow-y: auto;
   transform: translateX(100%);
   transition: transform .5s cubic-bezier(.2,.8,.2,1);
-  box-shadow: -24px 0 60px oklch(0.06 0.008 60 / .4);
+  box-shadow: -24px 0 60px oklch(0.06 0.012 250 / .4);
 }
 .work-modal.is-open .work-modal-panel { transform: translateX(0); }
 .work-modal-head { position: relative; }
@@ -425,7 +428,7 @@ body, .chrome, .status, .terrain-stage { transition: background .35s ease, color
 }
 .xp-cell::before {
   content: ""; position: absolute; inset: 0;
-  background: radial-gradient(600px 200px at var(--mx, 50%) var(--my, 50%), oklch(0.81 0.16 65 / .07), transparent 60%);
+  background: radial-gradient(600px 200px at var(--mx, 50%) var(--my, 50%), oklch(0.75 0.11 235 / .06), transparent 60%);
   opacity: 0; transition: opacity .4s ease;
 }
 .xp-cell:hover::before { opacity: 1; }
@@ -461,9 +464,9 @@ body, .chrome, .status, .terrain-stage { transition: background .35s ease, color
 .orbit .ring {
   position: absolute; inset: 0; border: 1px solid var(--rule); border-radius: 50%;
 }
-.orbit .ring.r2 { inset: 12%; border-style: dashed; border-color: oklch(0.28 0.008 70 / .6); }
+.orbit .ring.r2 { inset: 12%; border-style: dashed; border-color: oklch(0.3 0.014 245 / .6); }
 .orbit .ring.r3 { inset: 22%; }
-.orbit .ring.r4 { inset: 30%; border-style: dashed; border-color: oklch(0.28 0.008 70 / .6); }
+.orbit .ring.r4 { inset: 30%; border-style: dashed; border-color: oklch(0.3 0.014 245 / .6); }
 .orbit .core {
   position: absolute; inset: 0; display: grid; place-items: center;
   font-family: var(--sans); font-weight: 400; font-size: clamp(24px, 2.4vw, 36px);
@@ -618,7 +621,7 @@ footer .right { text-align: right; }
 .terrain-meta .tm-hint .tm-sub { font-family: var(--sans); text-transform: none; letter-spacing: 0; font-size: 13px; color: var(--fg-dim); }
 .terrain-stage {
   position: relative; aspect-ratio: 16 / 9; min-height: 380px;
-  background: linear-gradient(180deg, oklch(0.18 0.008 60) 0%, oklch(0.14 0.008 60) 100%);
+  background: linear-gradient(180deg, oklch(0.21 0.015 250) 0%, oklch(0.17 0.015 250) 100%);
   border: 1px solid var(--rule); border-radius: 4px; overflow: hidden;
 }
 .terrain-stage canvas { width: 100%; height: 100%; display: block; cursor: grab; }
@@ -626,7 +629,7 @@ footer .right { text-align: right; }
 .terrain-tip {
   position: absolute; pointer-events: none; opacity: 0;
   padding: 8px 12px; border: 1px solid var(--rule); border-radius: 4px;
-  background: oklch(0.18 0.008 60 / .92); backdrop-filter: blur(6px);
+  background: oklch(0.21 0.015 250 / .92); backdrop-filter: blur(6px);
   font-family: var(--mono); font-size: 11px; letter-spacing: .04em;
   color: var(--fg); transform: translate(-50%, calc(-100% - 12px));
   transition: opacity .2s ease;
@@ -646,8 +649,8 @@ footer .right { text-align: right; }
   font-family: var(--mono); font-size: 10px; letter-spacing: .06em; text-transform: uppercase; color: var(--fg-dim);
 }
 .terrain-legend i { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
-.terrain-legend-empty { background: #3a342a; }
-[data-theme="light"] .terrain-legend-empty { background: #c9bfa9; }
+.terrain-legend-empty { background: #2b3242; }
+[data-theme="light"] .terrain-legend-empty { background: #aab6c9; }
 @media (max-width: 900px) {
   .terrain-wrap { grid-template-columns: 1fr; }
   .terrain-stage { min-height: 320px; }
